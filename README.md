@@ -45,10 +45,10 @@ Wait until the script shows 'iDEP is ready.' It can take several hours, as the s
 **iDEP is not compatible with docker-compose version 1.23** - newer and some older versions will work (1.24.0 is recommended).
 
 ```
-sudo docker-compose up -d --scale webapp=15 
+sudo docker-compose up -d --scale webapp=4 
 ```
 Now the server is running. 
-Note: `webapp=15` indecate the web application count. Based on your system capacity, you can increase or decrease this number.
+Note: `webapp=4` indicates the web application count. Based on your system capacity, you can increase or decrease this number.
 You can bring everything down, removing the containers entirely, with the down command. Pass `--volumes` to also remove the data volume.
 ```
 sudo docker-compose down --volumes
