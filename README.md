@@ -29,26 +29,30 @@ Requirements
 
 A [user](https://github.com/wresch) has contributed scripts to install a standalone version using [Singularity](https://www.sylabs.io/). Following the instruction in this [folder.](https://github.com/iDEP-SDSU/idep/tree/master/singularity_standalone)  
 
-The following are instructions based on [Docker](https://www.docker.com/).
-1. Download following script based on your system:
-+ For Ubuntu: [Ubuntu](https://raw.githubusercontent.com/iDEP-SDSU/idep/master/docs/SetupScripts/ubuntu/setup.sh)
-Note: We are working on the script for other system.
+The following are instructions based on [Docker](https://www.docker.com/) and have only been tested on Ubuntu, but should work on most Linux distros.
+1. Clone the repository (it is a private repo, so you will be prompted for credentials):
 
-2. Run setup script in root:
+```
+https://github.com/compbiocore/idep-fork.git
+```
+
+2. Run setup script in the repo's root directory:
 ```
 sudo sh setup.sh
 ```
 Wait until the script shows 'iDEP is ready.' It can take several hours, as the script installs dozens of R pacakges and also copies a large database automatically.
 
-3. Start system
+3. Start system:
 
 **iDEP is not compatible with docker-compose version 1.23** - newer and some older versions will work (1.24.0 is recommended).
 
 ```
 sudo docker-compose up -d --scale webapp=4 
 ```
-Now the server is running. 
-Note: `webapp=4` indicates the web application count. Based on your system capacity, you can increase or decrease this number.
+After approximately 20 seconds, the server will be running.
+ 
+Note: `webapp=4` indicates the web application count. This count is currently hardcoded into the proxy, so the proxy docker image must be rebuilt in order to use a number of worker processes other than 4.  Please contact Andrew Leith if you wish to change this number.
+
 You can bring everything down, removing the containers entirely, with the down command. Pass `--volumes` to also remove the data volume.
 ```
 sudo docker-compose down --volumes
