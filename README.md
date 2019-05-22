@@ -58,6 +58,20 @@ You can bring everything down, removing the containers entirely, with the down c
 sudo docker-compose down --volumes
 ```
 
+Changes to the docker composition, such as substituting alternative file paths for the mounted volumes, can be done without rebuilding containers.  Simply use `sudo docker-compose down --volumes`, make the changes, and then run `sudo docker-compose up -d --scale webapp=4` again.
+
+## Advanced Setup
+
+It is possible to set up iDEP without downloading the data via the setup script.  To do so, create a local data directory that mimics the directory structure of this section of the setup script:
+```
+mkdir data
+cd data
+mkdir data92
+cd data92
+```
+
+i.e. `/path/data/data92`, with all references then expanded into that innermost subdirectory.  Then, substitute that path for the left side of the mount directive on line 10 of `docker-compose.yml`, replacing `./data/`.  This approach has not yet been tested.
+
 
 ## Documentation
 https://idepsite.wordpress.com/
