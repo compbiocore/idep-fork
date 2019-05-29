@@ -12,7 +12,7 @@ Local installation of this software is possible through the steps below, but it 
 
 1. Upgrade to the most recent version of R and Rstudio.
 2. Install all the R packages by running [this script](https://github.com/iDEP-SDSU/idep/blob/master/classes/librarySetup.R) under RStudio. This step will take a minimum of 3 hours.
-3. Download the iDEP source code and example data files from Github. The best is to click the Clone or Download button on this [page](https://github.com/compbiocore/idep-fork). And unzip to a folder such as C:/IDEP.
+3. Download the iDEP source code and example data files from Github. The best is to click the Clone or Download button on this [page](https://github.com/compbiocore/idep-fork). And unzip to a folder such as ~/IDEP.
 4. Download all database files. This process can take several hours. Unzip this files to a folder within the iDEP folder such as `~/IDEP/data/data92`. 
 [pathwayDB](https://sdsu.box.com/shared/static/c24f792ojoikpzu0lkpng8uuf9ychwm7.gz), 
 [Motif](https://sdsu.box.com/shared/static/9v1ao6mwhduvrcx793j3answph9gqnkt.gz), 
