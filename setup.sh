@@ -1,4 +1,4 @@
-# Ubuntu setup 
+# iDEP setup 
 
 
 echo 'Pulling R docker image and building the proxy...'
