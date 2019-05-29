@@ -77,10 +77,18 @@ mkdir data92
 cd data92
 ```
 
-i.e. `/path/data/data92`, with all references then expanded into that innermost subdirectory.  Then, substitute that path for the left side of the mount directive on line 10 of `docker-compose.yml`, replacing `./data/`.  This approach has not yet been tested.
+i.e. `/path/data/data92`, with all references then expanded into that innermost subdirectory.  Then, substitute that path for the left side of the mount directive on line 10 of `docker-compose.yml`, replacing `./data/`.
+
+Once that is done, prepare the two docker images by running the following script:
+
+```
+bash prepare-docker.sh
+```
+
+The script will pull the R image (~5 minutes) and build the proxy (<10 seconds) but take no other action.  This approach has not yet been tested.
 
 
-## Documentation
+## Documentation (External)
 https://idepsite.wordpress.com/
 http://docs.rstudio.com/shiny-server/
 
