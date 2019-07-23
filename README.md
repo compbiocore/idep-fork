@@ -45,7 +45,7 @@ https://github.com/compbiocore/idep-fork.git
 sudo sh setup.sh
 ```
 
-Wait until the script shows 'iDEP is ready.' It can take several hours, as the script installs dozens of R pacakges and also copies a large database automatically.
+Wait until the script shows 'iDEP is ready.' It can take several hours, as the script installs dozens of R packages and also copies a large database automatically.
 
 3. Start system:
 
