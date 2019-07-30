@@ -6,26 +6,41 @@
 ## iDEP is a web application hosted at PLACEHOLDER (ours is a fork of http://bioinformatics.sdstate.edu/idep/)
 
 ## Local installation
-Local installation of this software is possible through the steps below, but it is not supported by our group (see the parent repository for more information). 
+Local installation of this software is possible through the steps below.
 
-## To run iDEP on your laptop, you will need to download the database and follow these instructions:
+1. Clone the repository (it is a private repo, so you will be prompted for credentials):
 
-1. Upgrade to the most recent version of R and Rstudio.
-2. Install all the R packages by running [this script](https://github.com/iDEP-SDSU/idep/blob/master/classes/librarySetup.R) under RStudio. This step will take a minimum of 3 hours.
-3. Download the iDEP source code and example data files from Github. The best is to click the Clone or Download button on this [page](https://github.com/compbiocore/idep-fork). And unzip to a folder such as ~/IDEP.
-4. Download all database files. This process can take several hours. Unzip this files to a folder within the iDEP folder such as `~/IDEP/data/data92`. 
-[pathwayDB](https://sdsu.box.com/shared/static/c24f792ojoikpzu0lkpng8uuf9ychwm7.gz), 
-[Motif](https://sdsu.box.com/shared/static/9v1ao6mwhduvrcx793j3answph9gqnkt.gz), 
-[geneInfo](https://sdsu.box.com/shared/static/mns0k1uvwtfnsohoc89b984ih36nmnz9.gz), 
-[data_go](https://sdsu.box.com/shared/static/qwpdh36vcisgy1hcmadck8i8ezhvr2fh.gz), 
-[convertIDs](https://sdsu.box.com/shared/static/sorewt7w6iypmhg2k2xhyi8myeit156o.gz)
-5. Start RStudio and load the ui.R and server.R scriptS; then, click on Run app. 
+```
+https://github.com/compbiocore/idep-fork.git
+```
+
+2. Run the `run_idep_with_data.sh` script:
+
+```
+sudo sh run_idep_with_data.sh
+```
+
+This command will download a large docker image (~25 GB) containing the iDEP files and the associated data.
+
+3. Once the script is running, open a browser window and visit the URL:
+
+```
+127.0.0.1/idep/
+```
+
+or, equivalently:
+
+```
+localhost/idep/
+```
+
+Please note that some of the functions available through iDEP are memory intensive and may not be runnable on older machines with limited memory, especially when attempting to analyze large datasets.  In this case, the CBC's server-hosted iDEP instance should be used instead.
 
 ## To install iDEP as a server, follow the following instructions:
 
 Requirements
-+ Storage should be more than 200GB
-+ Memory should be more than 2GB
++ Storage should be more than 40 GB
++ Memory should be more than 2 GB
 
 A [user](https://github.com/wresch) has contributed scripts to install a standalone version using [Singularity](https://www.sylabs.io/). Following the instruction in this [folder.](https://github.com/iDEP-SDSU/idep/tree/master/singularity_standalone)  
 
